@@ -1,29 +1,4 @@
-<?php
-    include "views/header.php";
-    include "controller/anak-controller.php";
-    include "controller/kandungan-controller.php";
-?>
-<script type="text/javascript">
-    var antrian = setInterval(
-    function(){
-        $('#antrian').load('show-queue.php').fadeIn("slow");
-        }, 1000);
-</script>
-    <div id="right-panel" class="right-panel">
-                <!-- Header-->
-        <header id="header" class="header navbar-fixed-top">
-            <div class="header-menu">
-                <div class="col-sm-12">
-                    <div class="user-area float-left">
-                        <a href="https://www.rskiarachmi.co.id">
-                            <img src="images/logo.jpg" alt="Rachmi Online">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- /header -->
-        <!-- Header--><br><br><br>
+<?php include "views/header.php"; ?>
         <div class="content mt-3">
             <div class="animated fadeIn">
             <div class="row">
@@ -44,7 +19,6 @@
                                     <tbody>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $no = 1;
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
@@ -75,7 +49,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -105,7 +78,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -135,7 +107,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -165,7 +136,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -195,7 +165,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -225,7 +194,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -255,7 +223,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -285,7 +252,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -315,7 +281,6 @@
                   <?php } ?>
                   <!---------- Batas ----------->
                   <?php 
-                    include '../koneksi.php';
                     $data = mysqli_query($koneksi,
                      "SELECT mr_tt.kelas, mr_unit.nama_unit, mr_tt.no_bed, mr_tt.id_register,
                      IF(mr_tt.no_bed='1', 'A', 'B') AS bed
@@ -352,8 +317,6 @@
                 </div>
             </div>
             </div>
-        </div> <!-- .content -->
         <div align="center"><p>Developed by Ardi Tri Heru<br>Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a expr:href='data:blog.homepageUrl'><data:blog.title/>.</a> All rights reserved.<br><font face="consolas" >Version 1.0</font></div>
 <br><br>
-    </div><!-- Right Panel -->
 <?php include "views/footer.php"; ?> 

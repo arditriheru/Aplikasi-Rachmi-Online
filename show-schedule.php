@@ -1,19 +1,4 @@
 <?php include "views/header.php"; ?>
-    <div id="right-panel" class="right-panel">
-                <!-- Header-->
-        <header id="header" class="header navbar-fixed-top">
-            <div class="header-menu">
-                <div class="col-sm-12">
-                    <div class="user-area float-left">
-                        <a href="https://www.rskiarachmi.co.id">
-                            <img src="images/logo.jpg" alt="Rachmi Online">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- /header -->
-        <!-- Header--><br><br><br>
         <div class="content mt-3">
             <div class="animated fadeIn">
             <div class="row">
@@ -134,8 +119,6 @@
                 </div>
             </div>
             </div>
-        </div> <!-- .content -->
         <div align="center"><p>Developed by Ardi Tri Heru<br>Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a expr:href='data:blog.homepageUrl'><data:blog.title/>.</a> All rights reserved.<br><font face="consolas" >Version 1.0</font></div>
 <br><br>
-    </div><!-- Right Panel -->
 <?php include "views/footer.php"; ?> 
