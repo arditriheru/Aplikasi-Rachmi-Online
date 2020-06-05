@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <script src="https://use.fontawesome.com/40a517b96a.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendors/sweetalert/sweetalert.css">
     <style>
     .blacktext {
     color: #272727;
@@ -81,3 +83,16 @@
 <body onload="myFunction()" style="margin:0;">
 <div id="loader"></div>
 <div style="display:none;" id="myDiv" class="animate-bottom"></div>
+<div id="right-panel" class="right-panel">
+  <header id="header" class="header navbar-fixed-top">
+    <div class="header-menu">
+    <div class="col-sm-12">
+      <div class="user-area float-left">
+        <a href="https://www.rskiarachmi.co.id">
+          <img src="images/logo.jpg" alt="Rachmi Online">
+        </a>
+      </div>
+    </div>
+    </div>
+  </header><br><br><br>
+  <?php include 'controller/connection.php'; ?>
