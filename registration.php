@@ -5,7 +5,10 @@
                 <div class="col-lg-12">
                     <ul class="nav nav-pills nav-justified mb-3 mt-2" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Registrasi</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Info Antrian</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Pendaftaran</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Cetak Ulang</a>
@@ -89,12 +92,56 @@
                               }
                             ?>
                     <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="card">
+                        <div class="card-body card-block">
+                            <form action="queue-check" method="post" role="form">
+                                <div class="form-group">
+                                    <label>Nama Dokter</label>
+                                    <select class="form-control" type="text" name="id_dokter">
+                                        <p style="color:red;"><?php echo ($error['dokter']) ? $error['dokter'] : ''; ?></p>
+                                            <option disabled selected>Pilih Dokter</option>
+                                              <?php 
+                                                include 'controller/connection.php';
+                                                $data = mysqli_query($koneksi,
+                                                  "SELECT * FROM dokter WHERE status=1;");
+                                                while($d = mysqli_fetch_array($data)){
+                                                echo "<option value='".$d['id_dokter']."'>".$d['nama_dokter']."</option>";
+                                                }
+                                              ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Jadwal Poli</label>
+                                    <input class="form-control" type="date" name="booking_tanggal" required="" placeholder="Masukkan Jadwal Poli">
+                                    <p style="color:red;"><?php echo ($error['booking_tanggal']) ? $error['booking_tanggal'] : ''; ?></p>
+                                    </div>
+                                <div class="form-group">
+                                    <label>Sesi</label>
+                                    <select class="form-control" type="text" name="id_sesi">
+                                        <p style="color:red;"><?php echo ($error['id_sesi']) ? $error['id_sesi'] : ''; ?></p>
+                                            <option disabled selected>Pilih Sesi</option>
+                                              <?php 
+                                                include 'controller/connection.php';
+                                                $data = mysqli_query($koneksi,
+                                                  "SELECT * FROM sesi ORDER BY id_sesi ASC;");
+                                                while($d = mysqli_fetch_array($data)){
+                                                echo "<option value='".$d['id_sesi']."'>".$d['nama_sesi']."</option>";
+                                                }
+                                              ?>
+                                    </select>
+                                </div>
+                                <button type="submit" name="cek" class="btn btn-primary">Lihat</button>
+                            </form>
+                        </div>
+                        </div>
+                        </div>
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="card">
                         <div class="card-body card-block">
                             <form action="" method="post" role="form">
                                <div class="form-group">
-                                    <label for="cc-payment" class="control-label mb-1">Nomor RM</label>
+                                    <label for="cc-payment" class="control-label mb-1">Nomor Rekam Medik</label>
                                     <input id="id_catatan_medik" name="id_catatan_medik" type="text" class="form-control" aria-invalid="false" placeholder="Masukkan Nomor RM Anda">
                                     <p style="color:red;"><?php echo ($error['id_catatan_medik']) ? $error['id_catatan_medik'] : ''; ?></p>
                                 </div>

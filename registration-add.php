@@ -23,7 +23,7 @@
                 $tanggal          = $tanggal;
                 $jam              = $jam;
                 $status           = '2';
-                $keterangan       = $_POST['keterangan'];
+                $keterangan       = 'DAFTAR MANDIRI';
                 // cek selisih hari
                 $tglsekarang  = new DateTime();
                 $jadwal     = new DateTime("$booking_tanggal");
@@ -183,10 +183,6 @@
                           ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label mb-1">Keterangan</label>
-                        <input class="form-control" type="text" name="keterangan" placeholder="Masukkan..">
-                      </div>
                       <button type="submit" name="add" class="btn btn-primary">Daftar</button>
                 </form><?php } ?>
                 </div>
