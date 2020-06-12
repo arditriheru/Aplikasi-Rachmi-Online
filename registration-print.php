@@ -82,6 +82,4 @@
                 </div>
             </div>
             </div>
-        <div align="center"><p>Developed by Ardi Tri Heru<br>Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a expr:href='data:blog.homepageUrl'><data:blog.title/>.</a> All rights reserved.<br><font face="consolas" >Version 1.0</font></div>
-<br><br>
 <?php include "views/footer.php"; ?> 

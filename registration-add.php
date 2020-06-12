@@ -78,6 +78,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label mb-1">Sesi</label>
+                        <p class="bluetext"><b>Pagi :</b> 07.00 - 10.59 | <b>Siang :</b> 11.00 - 14.59 | <b>Sore :</b> 15.00 - 17.59 | <b>Malam :</b> 18.00 - selesai</p>
                         <select class="form-control" type="text" name="id_sesi"
                         value="<?php echo $d['id_sesi']; ?>" required="">
                           <option disabled selected>Pilih</option>
@@ -96,6 +97,4 @@
                 </div>
                 <!-- /# column -->
             </div>
-        <div align="center"><p>Developed by Ardi Tri Heru<br>Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a expr:href='data:blog.homepageUrl'><data:blog.title/>.</a> All rights reserved.<br><font face="consolas" >Version 1.0</font></div>
-<br><br>
 <?php include "views/footer.php"; ?> 
