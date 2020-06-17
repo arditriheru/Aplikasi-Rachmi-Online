@@ -1,26 +1,44 @@
 <?php include "views/header.php"; ?>
-<div class="content mt-3">
-    <div class="animated fadeIn">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div align="center"><img class="img-responsive" src="images/information1.jpg" width="50%" alt="Koneksi internet lambat.."></div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div align="center"><img class="img-responsive" src="images/information2.jpg" width="50%" alt="Koneksi internet lambat.."></div>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div align="center"><img class="img-responsive" src="images/information3.jpg" width="50%" alt="Koneksi internet lambat.."></div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div align="center"><img class="img-responsive" src="images/information4.jpg" width="50%" alt="Koneksi internet lambat.."></div>
-                    </div>
-                </div>
-            </div>
+<!-- Page Content -->
+<div class="container">
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Update Informasi</h1>
+    <hr class="mt-2 mb-5">
+    <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6">
+            <a class="thumbnail fancybox" rel="ligthbox" href="images/information1.jpg">
+                <img class="img-fluid img-thumbnail" src="images/information1.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a class="thumbnail fancybox" rel="ligthbox" href="images/information2.jpg">
+                <img class="img-fluid img-thumbnail" src="images/information2.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a class="thumbnail fancybox" rel="ligthbox" href="images/information3.jpg">
+                <img class="img-fluid img-thumbnail" src="images/information3.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-6">
+            <a class="thumbnail fancybox" rel="ligthbox" href="images/information4.jpg">
+                <img class="img-fluid img-thumbnail" src="images/information4.jpg" alt="">
+            </a>
         </div>
     </div>
-</div><br><br><br>
+</div><br>
+<!-- /.container -->
+<nav class="nav-bottom">
+  <a href="help" class="nav-bottom__link">
+    <i class="material-icons nav-bottom__icon">help_outline</i>
+    <span class="nav-bottom__text">Help</span>
+</a>
+<a href="https://pendaftaran.rskiarachmi.co.id/" class="nav-bottom__link nav-bottom__link--active">
+    <i class="material-icons nav__icon">dashboard</i>
+    <span class="nav-bottom__text">Home</span>
+</a>
+<a href="https://pendaftaran.rskiarachmi.co.id/" class="nav-bottom__link">
+    <i class="material-icons nav-bottom__icon">arrow_back</i>
+    <span class="nav-bottom__text">Back</span>
+</a>
+</nav>
 <?php include "views/footer.php"; ?> 

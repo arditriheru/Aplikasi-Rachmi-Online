@@ -78,4 +78,18 @@
             </section>
         </div>
     </div>
-    <?php include "views/footer.php"; ?> 
+    <nav class="nav-bottom">
+      <a href="help" class="nav-bottom__link">
+        <i class="material-icons nav-bottom__icon">help_outline</i>
+        <span class="nav-bottom__text">Help</span>
+    </a>
+    <a href="https://pendaftaran.rskiarachmi.co.id/" class="nav-bottom__link nav-bottom__link--active">
+        <i class="material-icons nav__icon">dashboard</i>
+        <span class="nav-bottom__text">Home</span>
+    </a>
+    <a href="https://pendaftaran.rskiarachmi.co.id/" class="nav-bottom__link">
+        <i class="material-icons nav-bottom__icon">arrow_back</i>
+        <span class="nav-bottom__text">Back</span>
+    </a>
+</nav>
+<?php include "views/footer.php"; ?> 
