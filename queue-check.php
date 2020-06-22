@@ -21,9 +21,11 @@
               ?>
               <div class="card"><br>
                 <div align="center">
+                  <h3>Poliklinik <?php echo $b['nama_sesi'];?></h3><br>
+                  <p><b>Tanggal <?php echo format_indo($booking_tanggal);?></b></p>
                   <h5 class="bluetext"><?php echo $b['nama_dokter'];?></h5><br>
                   <h1><?php echo $b['total'];?> Pasien</h1><br>
-                  <h5>Sesi <?php echo $b['nama_sesi'];?></h5><br>
+                  <p>**Jumlah pasien terdaftar bersifat sementara dapat berubah setiap saat kecuali telah memenuhi kuota masing-masing dokter, booking jadwal poli dapat Anda lakukan maksimal H-30</p>
               </div><br>
               </div><br><?php } ?>
           </div>

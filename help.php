@@ -10,14 +10,18 @@
                             <table class="table">
                                 <tr>
                                     <td>1.</td>
-                                    <td>Pendaftaran Online hanya dapat dilakukan oleh pasien yang sudah terdaftar di RSKIA Rachmi yaitu dengan memiliki Nomor Rekam Medik, dengan cara memasukkan Nomor Rekam Medik dan Tanggal Lahir;</td>
+                                    <td>Pendaftaran Online hanya dapat dilakukan oleh pasien yang sudah terdaftar di RSKIA Rachmi yaitu dengan <strong>memiliki Nomor Rekam Medik</strong>, dengan cara memasukkan Nomor Rekam Medik dan Tanggal Lahir;</td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
-                                    <td>Info Antrian berfungsi untuk melihat jumlah pasien yang sudah mendaftar Poliklinik;</td>
+                                    <td>Pendaftaran Online hanya dapat dilakukan sekali pada <strong>Dokter, Jadwal dan Sesi</strong> yang sama;</td>
                                 </tr>
                                 <tr>
                                     <td>3.</td>
+                                    <td>Info Antrian berfungsi untuk melihat jumlah pasien yang sudah mendaftar Poliklinik;</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
                                     <td>Cetak Ulang berfungsi untuk menampilkan kembali detail pendaftaran yang sudah dilakukan sebelumnya;</td>
                                 </tr>
                             </table>

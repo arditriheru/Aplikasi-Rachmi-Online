@@ -60,7 +60,7 @@
                                             <div class="form-group">
                                                 <label>Nama Dokter</label>
                                                 <select class="form-control" type="text" name="id_dokter">
-                                                    <option disabled selected>Pilih Dokter</option>
+                                                    <option disabled selected>Pilih</option>
                                                     <?php 
                                                     include 'controller/connection.php';
                                                     $data = mysqli_query($koneksi,
@@ -78,7 +78,7 @@
                                             <div class="form-group">
                                                 <label>Sesi</label>
                                                 <select class="form-control" type="text" name="id_sesi">
-                                                    <option disabled selected>Pilih Sesi</option>
+                                                    <option disabled selected>Pilih</option>
                                                     <?php 
                                                     include 'controller/connection.php';
                                                     $data = mysqli_query($koneksi,
@@ -102,12 +102,12 @@
                                           <li>Pendaftaran Online sementara ini hanya berlaku bagi Pasien yang telah memiliki Nomor Rekam Medik RSKIA Rachmi yang akan berobat Rawat Jalan.</li>
                                           <li>Bagi pasien baru yang belum pernah mendaftar di RSKIA Rachmi harap datang langsung ke bagian pendaftaran.</li>
                                           <li>Pendaftaran Online dapat dilakukan untuk kontrol Poli dengan Jadwal H-30 s.d hari H saat jadwal kontrol dilakukan dengan memasukkan : Nomor RM , Tanggal Lahir, Pilihan Hari Kontrol dan Dokter untuk poli reguler. Dokter yang ditunjuk adalah dokter DPJP (Dokter Penanggung Jawab Pelayanan).</li>
-                                          <li>Pasien di hari yang sama hanya dapat mendaftar 1 kali dengan 1 dokter dan di sesi yang sama.</li>
+                                          <li>Pasien hanya dapat mendaftar sekali pada Dokter, Jadwal dan Sesi yang sama.</li>
                                           <li>Jadwal Dokter dapat berubah sewaktu waktu.</li>
                                           <li>Apabila Anda telah melakukan pendaftaran Online, Anda akan mendapatkan Bukti pendaftaran yang dapat di (screenshot) dan ditunjukkan pada saat Jadwal Kontrol.</li>
-                                          <li>Apabila Anda ingin melihat kembali Bukti Pendaftaran Online setelah mendaftar Cetak Ulang Reservasi pada sub-menu di halaman ini.</li>
-                                          <li>Nomor Antrian Periksa dokter adalah sesuai dengan urutan ketika melakukan reservasi ulang.</li>
-                                          <li>Untuk kasus Gawat Darurat silakan datang ke IGD RRSKIA Rachmi.</li>
+                                          <li>Apabila Anda ingin melihat detail Pendaftaran Online pada sub-menu Cetak Ulang di halaman ini.</li>
+                                          <li>Nomor Antrian Periksa dokter adalah sesuai dengan urutan ketika melakukan registrasi ulang.</li>
+                                          <li>Untuk kasus Gawat Darurat silakan datang ke UGD RSKIA Rachmi.</li>
                                           <li>Bukti Pendaftaran Online dibawa di loket Pendaftaran RSKIA Rachmi.</li>
                                           <li>Pasien yang telah melakukan registrasi online diharapkan datang tepat waktu.</li>
                                       </ol>

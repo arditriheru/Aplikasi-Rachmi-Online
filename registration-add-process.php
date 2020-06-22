@@ -15,12 +15,11 @@ $id_sesi          = $_POST['id_sesi'];
 $tanggal          = $tanggal;
 $jam              = $jam;
 $status           = '2';
-$keterangan       = 'DAFTAR MANDIRI';
-                // cek selisih hari
+$keterangan       = $_POST['keterangan'];
+
 $tglsekarang  = new DateTime();
 $jadwal     = new DateTime("$booking_tanggal");
-$hasil      = $tglsekarang->diff($jadwal)->format("%a");
-$selisih    = $hasil;
+$selisih      = $tglsekarang->diff($jadwal)->format("%a");
                 // cek antrian
 $a = mysqli_query($koneksi,
   "SELECT COUNT(*) AS antrian
@@ -29,67 +28,77 @@ $a = mysqli_query($koneksi,
   AND booking_tanggal='$booking_tanggal'
   AND id_sesi='$id_sesi';");
 while($b = mysqli_fetch_array($a)){
+  $antrian    =  $b['antrian']+1;
+}
 
-  $antrian       =  $b['antrian']+1;
+$c = mysqli_query($koneksi,
+  "SELECT kuota_status FROM dokter WHERE id_dokter='$id_dokter';");
+while($d = mysqli_fetch_array($c)){
+  $kuota_status = $d['kuota_status'];
+}
 
-  if($selisih>30){
-    echo "<script>alert('GAGAL!!! Lebih dari 30 Hari!');document.location='booking-tambah'</script>";
-    break;
-  }if(empty($error)){
-    $c = mysqli_query($koneksi,
-      "SELECT COUNT(*) AS cek
-      FROM booking
-      WHERE id_catatan_medik = $id_catatan_medik
-      AND id_dokter = $id_dokter
-      AND id_sesi = $id_sesi
-      AND booking_tanggal = '$booking_tanggal';");
-    while($d = mysqli_fetch_array($c)){
-      $cek       =  $d['cek'];
-    }if($cek>0){
+$e = mysqli_query($koneksi,
+  "SELECT COUNT(*) AS terdaftar
+  FROM booking
+  WHERE id_catatan_medik='$id_catatan_medik'
+  AND id_dokter='$id_dokter'
+  AND booking_tanggal='$booking_tanggal'
+  AND id_sesi='$id_sesi';");
+while($f = mysqli_fetch_array($e)){
+  $terdaftar  = $f['terdaftar'];
+}
+
+$error=array();
+if (empty($nama)){
+  $error['nama']='Nama Harus Diisi!!!';
+}if (empty($alamat)){
+  $error['alamat']='Alamat Harus Diisi!!!';
+}if (empty($kontak)){
+  $error['kontak']='Kontak Harus Diisi!!!';
+}if (empty($id_dokter)){
+  $error['id_dokter']='Dokter Harus Diisi!!!';
+}if (empty($booking_tanggal)){
+  $error['booking_tanggal']='Tanggal Harus Diisi!!!';
+}if (empty($id_sesi)){
+  $error['id_sesi']='Sesi Harus Diisi!!!';
+}
+if($kuota_status == 0){
+            // Cek kuota_status tidak aktif
+  include 'registration-add-query.php';
+}else{
+  include '../koneksi.php';
+  $namahari = date('l', strtotime($booking_tanggal));
+  $e = mysqli_query($koneksi,
+    "SELECT kuota, kuota_hari FROM dokter WHERE id_dokter='$id_dokter';");
+  while($f = mysqli_fetch_array($e)){
+    $kuota      = $f['kuota'];
+    $kuota_hari = $f['kuota_hari'];
+
+    $a1     = explode (", ",$kuota_hari);
+    $a2     = array("$namahari");
+    $result = array_intersect($a1,$a2);
+  }
+
+  if(!$namahari == $result){
+    include 'registration-add-query.php';
+  }else{
+    if($antrian > $kuota){
+                          // Cek antrian melebihi kuota / tidak
       echo "<script>
       setTimeout(function() {
         swal({
-          title: 'Gagal!',
-          text: 'Sebelumnya Sudah Mendaftar!',
+          title: 'Kuota Penuh',
+          text: 'Silahkan Re-Schedule!',
           type: 'error'
           }, function() {
-            window.location = 'registration-add?id=$id_catatan_medik';
+            window.location = 'booking-tambah';
             });
             }, 10);
             </script>";
-            break;
           }else{
-            $simpan=mysqli_query($koneksi,"INSERT INTO booking (id_booking, nama, alamat, kontak, id_catatan_medik, booking_tanggal, tanggal, jam, status, keterangan, id_dokter, id_sesi)
-              VALUES('','$nama','$alamat',
-              '$kontak','$id_catatan_medik','$booking_tanggal','$tanggal','$jam','$status','$keterangan',
-              '$id_dokter','$id_sesi')");
+            include 'registration-add-query.php';
           }
-          if($simpan){
-            echo "<script>
-            setTimeout(function() {
-              swal({
-                title: 'Antrian $antrian',
-                text: 'Berhasil Mendaftarkan',
-                type: 'success'
-                }, function() {
-                  window.location = 'registration';
-                  });
-                  }, 10);
-                  </script>";
-                }else{
-                  echo "<script>
-                  setTimeout(function() {
-                    swal({
-                      title: 'Gagal!',
-                      text: 'Hilangkan Tanda Petik di Nama Pasien',
-                      type: 'error'
-                      }, function() {
-                        window.location = 'registration-add?id=$id_catatan_medik';
-                        });
-                        }, 10);
-                        </script>";
-                      }
-                    }
-                  }
-                  include 'views/footer.php';
-                  ?>
+        }
+      }
+      include 'views/footer.php';
+      ?>
